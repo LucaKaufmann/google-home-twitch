@@ -7,7 +7,8 @@ Things that are needed:
 * Google Chromecast
 
 ## Home assistant
-Getting this to work with Home Assistant is incredibly easy. It requires a few different components though:
+
+Getting this to work with Home Assistant is quite simple. It does require a few different components though:
 * [IFTTT](https://home-assistant.io/components/ifttt/)
 * [python_scripts](https://home-assistant.io/components/python_script/)
 * [media_extractor](https://home-assistant.io/components/media_extractor/)
@@ -25,7 +26,8 @@ Then you'll need to add python_scripts: to your configuration.yaml
 python_scripts:
 ```
 
-You'll also need [media_extractor:](https://home-assistant.io/components/media_extractor/). Example:
+You'll also need to enable [media_extractor:](https://home-assistant.io/components/media_extractor/) 
+Example:
 ```yaml
 media_extractor:
   default_query: best
@@ -44,7 +46,7 @@ To be able to call the script from Google Assistant/Home, you'll need to set up 
 
 1. Go to [IFTTT.com](https://ifttt.com), you might need to link IFTTT to your Google account and enable the [Webhook component](https://ifttt.com/maker_webhooks).
 2. Create a new Applet, as a trigger choose Google Assistant - Say a phrase with a text ingredient and enter the phrases (I used "cast $" and "stream $"), click Create Trigger
-3. As an action choose Webhook. Set the URL to http://YOUR_PUBLIC_IP:8123/api/services/python_script/twitch?api_password=YOUR_HASS_PASSWORD. Set the content type to **application/json** and add this to the Body: *{ "stream_name": "{{TextField}}" }* Click save.
+3. As an action choose Webhook. Set the URL to **http://YOUR_PUBLIC_IP:8123/api/services/python_script/twitch?api_password=YOUR_HASS_PASSWORD**. Set the content type to **application/json** and add this to the Body: **{ "stream_name": "{{TextField}}" }** Click save.
 4. You should be all done now, ask your Google home to "Stream X" or whatever phrase you used and if the stream is online, it should start playing on the Chromecast after a few seconds.
 
 ## Installation guides for Raspberry Pi (PHP and Python script)
