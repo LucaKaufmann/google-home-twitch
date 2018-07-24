@@ -7,7 +7,8 @@ Things that are needed:
 * Google Chromecast
 
 ## Home assistant
-Getting this to work with Home Assistant is incredibly easy. It requires a few different components though:
+
+Getting this to work with Home Assistant is quite simple. It does require a few different components though:
 * [IFTTT](https://home-assistant.io/components/ifttt/)
 * [python_scripts](https://home-assistant.io/components/python_script/)
 * [media_extractor](https://home-assistant.io/components/media_extractor/)
@@ -25,7 +26,8 @@ Then you'll need to add python_scripts: to your configuration.yaml
 python_scripts:
 ```
 
-You'll also need [media_extractor:](https://home-assistant.io/components/media_extractor/). Example:
+You'll also need to enable [media_extractor:](https://home-assistant.io/components/media_extractor/)
+Example:
 ```yaml
 media_extractor:
   default_query: best
